@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <button mat-icon-button aria-label="Applications" routerLink="/">
+    <!-- <mat-icon>apps</mat-icon> -->
+    <img src="../../../assets/images/volvo-icon.png" alt="">
+  </button>
+  <button *ngIf="isRedirected" mat-icon-button aria-label="Go Back" routerLink="/">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <button mat-button aria-label="XDock ShipIT" routerLink="/">
+    <mat-icon>directions_boat</mat-icon>
+    XDock ShipIT
+  </button>
+  <button mat-button aria-label="Master Data" routerLink="/master-data">
+    <mat-icon>text_snippet</mat-icon>
+    Master Data
+  </button>
+  <button
+    mat-button
+    aria-label="Training Material"
+    routerLink="/training-material"
+  >
+    <mat-icon>timeline</mat-icon>
+    Training Material
+  </button>
+  <span class="navbar-spacer"></span>
+  <button mat-button aria-label="Profile" routerLink="/profile">
+    <mat-icon>person</mat-icon>
+    Hakan Genc
+  </button>
+</mat-toolbar>
