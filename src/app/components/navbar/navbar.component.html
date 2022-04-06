@@ -1,30 +1,50 @@
 <mat-toolbar>
   <button mat-icon-button aria-label="Applications" routerLink="/">
     <!-- <mat-icon>apps</mat-icon> -->
-    <img src="../../../assets/images/volvo-icon.png" alt="">
+    <img src="../../../assets/images/volvo-icon.png" alt="" />
   </button>
-  <button *ngIf="isRedirected" mat-icon-button aria-label="Go Back" routerLink="/">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
-  <button mat-button aria-label="XDock ShipIT" routerLink="/">
-    <mat-icon>directions_boat</mat-icon>
-    XDock ShipIT
-  </button>
-  <button mat-button aria-label="Master Data" routerLink="/master-data">
-    <mat-icon>text_snippet</mat-icon>
-    Master Data
-  </button>
-  <button
-    mat-button
-    aria-label="Training Material"
-    routerLink="/training-material"
-  >
-    <mat-icon>timeline</mat-icon>
-    Training Material
-  </button>
+
+  <!-- Navbar list-->
+  <div fxHide.lt-md="true">
+    <button
+      *ngIf="isRedirected"
+      mat-icon-button
+      aria-label="Go Back"
+      routerLink="/"
+    >
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-button aria-label="XDock ShipIT" routerLink="/">
+      <mat-icon>directions_boat</mat-icon>
+      XDock ShipIT
+    </button>
+    <button mat-button aria-label="Master Data" routerLink="/master-data">
+      <mat-icon>text_snippet</mat-icon>
+      Master Data
+    </button>
+    <button
+      mat-button
+      aria-label="Training Material"
+      routerLink="/training-material"
+    >
+      <mat-icon>timeline</mat-icon>
+      Training Material
+    </button>
+  </div>
+
   <span class="navbar-spacer"></span>
-  <button mat-button aria-label="Profile" routerLink="/profile">
+  <button mat-button [matMenuTriggerFor]="menu">
     <mat-icon>person</mat-icon>
     Hakan Genc
   </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>
